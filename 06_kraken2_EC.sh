@@ -4,6 +4,8 @@
 # Kraken2 para muestras ECF, ECI y ECM
 # Entrada: archivos procesados por KneadData
 
+miniconda3/envs/metagenomics/bin/kraken2
+
 INPUT="/qnap/rambovinos/kneaddata"
 OUTPUT="/qnap/rambovinos/kraken2"
 LISTA="/qnap/rambovinos/lista_EC.txt"
@@ -46,6 +48,7 @@ do
 
     kraken2 \
         --db "$DB" \
+        --memory-mapping \
         --threads "$THREADS" \
         --paired \
         "$R1" "$R2" \
